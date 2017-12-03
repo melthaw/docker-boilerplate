@@ -1,0 +1,2 @@
+rootProject.name = 'nginx-cors-boilerplate'
+include 'backend'

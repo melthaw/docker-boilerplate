@@ -1,0 +1,35 @@
+ext {
+    libs = [
+            commons         : [
+                    "commons-codec:commons-codec:${version_commons_codec}",
+                    "org.apache.commons:commons-lang3:3.4",
+                    "commons-io:commons-io:2.5",
+                    "com.google.guava:guava:${version_google_guava}",
+                    "com.google.code.gson:gson:${version_google_gson}",
+                    "org.im4java:im4java:1.4.0",
+                    "org.hibernate:hibernate-validator:${version_hibernate_validator}",
+                    "org.apache.httpcomponents:httpclient:4.3.6"
+            ],
+            springBoot      : [
+                    "org.springframework.boot:spring-boot-starter:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-starter-web:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-starter-mail:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-starter-aop:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-devtools:${version_spring_boot}"
+            ],
+            springBootTomcat: [
+                    "org.springframework.boot:spring-boot-starter-tomcat:${version_spring_boot}"
+            ],
+            jackson2        : [
+                    "com.fasterxml.jackson.core:jackson-annotations:${version_fasterxml_jackson_annotations}",
+                    "com.fasterxml.jackson.core:jackson-core:${version_fasterxml_jackson_core}",
+                    "com.fasterxml.jackson.core:jackson-databind:${version_fasterxml_jackson_databind}"
+            ],
+            test            : [
+                    "junit:junit:${version_junit}",
+                    "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
+                    "org.springframework.security:spring-security-test:${version_spring_security}",
+                    "com.github.fakemongo:fongo:1.6.5"
+            ]
+    ]
+}

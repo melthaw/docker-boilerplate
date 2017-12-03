@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${version_spring_boot}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+dependencies {
+    compile libs.springBoot
+    compile libs.springBootTomcat
+
+}
+
+bootRun {
+    if ( project.hasProperty('jvmArgs') ) {
+        jvmArgs project.jvmArgs.split('\\s+')
+    }
+    if ( project.hasProperty('args') ) {
+        args project.args.split('\\s+')
+    }
+}

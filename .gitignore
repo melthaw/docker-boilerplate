@@ -54,4 +54,11 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-.idea/
+target/
+build/
+.gradle
+.DS_Store
+.idea
+*.iml
+*.iws
+*.log
