@@ -1,2 +1,10 @@
-version: 2
+version: '2'
 services:
+  nginx-cors-boilerplate-backend:
+    container_name: nginx-cors-boilerplate-backend
+    build: backend
+    ports:
+      - '8081:8080'
+#      - "8190:8190"
+    environment:
+      JAVA_OPTS: -Xdebug -Xmx512m -Xms256m -Xrunjdwp:server=y,transport=dt_socket,address=8190,suspend=n
