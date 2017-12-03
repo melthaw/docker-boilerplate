@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.boot.context.web.ErrorPageFilter;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = SecurityAutoConfiguration.class)
+@ComponentScan({"in.clouthink.dass.boilerplate.cors.controller"})
 @Import({NginxCorsWebMvcConfigurer.class})
 public class NginxCorsApplication extends SpringBootServletInitializer {
 
