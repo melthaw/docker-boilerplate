@@ -23,10 +23,10 @@ The benefit is:
 1. Don't need to change the backend.
 2. Make very few change to frontend.
 
-> The domain of frontend is www.myexample.com
-> The rest api provider is todolist.thirdparty.com
-> The frontend is supposed to access http://todolist.thirdparty.com/api
-> Now the frontend is changed to access http://www.myexmaple.com/api
-> It's very easy to change the target endpoint to another one if the target is defined in a global const.
-
 The proxy takes most of the responsibility. Now let's figure out how it works.
+
+* The domain of frontend is www.myexample.com.
+* The rest api provider is todolist.thirdparty.com.
+* The frontend is supposed to access http://todolist.thirdparty.com/api
+* Now the frontend is changed to access http://www.myexmaple.com/api
+* It's very easy to change the target endpoint to another one if the target is defined in a global const.
