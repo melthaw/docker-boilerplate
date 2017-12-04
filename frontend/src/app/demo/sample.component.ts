@@ -5,16 +5,19 @@ import {APP_CONFIG} from "../app.config";
 import {AppConfig} from "../app.config";
 import {SampleService} from "./sample.service";
 
-
 @Component({
     selector: 'ncb-sample',
     template: `
     <div>
-        <p>Please click the  <button type="button"
-                label="Load"
-                (click)="loadList()"
-        ></button>  to load the TODO list.</p>
+        <p>Please click the button to manage TODO list.</p>
+        <button type="button" (click)="loadList()">Load</button>
+        <button type="button" (click)="clearList()">Clear</button>
 
+        <div *ngIf="todolist != null && todolist.length>0">
+            <ul *ngFor="let todoItem of todolist,let i=index" >
+                <li>{{todoItem}}</li>
+            </ul>
+        </div>
     </div>
    `
 })
@@ -22,17 +25,23 @@ export class DemoSampleComponent implements AfterViewChecked {
 
     constructor(@Inject(APP_CONFIG) private appConfig:AppConfig,
                 private sampleService:SampleService) {
-        super();
+
     }
 
-    data:Array = [];
+    private todolist = [];
 
     ngOnInit() {
 
     }
 
     loadList() {
-        this.sampleService.getTodolist();
+        this.sampleService
+            .getTodolist()
+            .then(result => this.todolist = result);
+    }
+
+    clearList() {
+        this.todolist = [];
     }
 
     ngAfterViewChecked() {

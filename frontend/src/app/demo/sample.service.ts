@@ -2,7 +2,7 @@ import { Injectable,Inject } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import {HttpClient} from "rp-dynamic-form/components/form/shared/http-client";
+import {HttpClient} from "../shared/http-client";
 
 import {AppConfig,APP_CONFIG} from "../app.config";
 

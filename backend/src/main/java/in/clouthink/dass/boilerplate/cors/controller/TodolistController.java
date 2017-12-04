@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class HelloController {
+public class TodolistController {
 
     @RequestMapping(value = "/todolist", method = RequestMethod.GET)
     public List<String> getTodolist() {
