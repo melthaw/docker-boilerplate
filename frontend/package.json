@@ -1,0 +1,60 @@
+{
+  "name": "nginx-cors-boilderplate-frontend",
+  "version": "1.0.0",
+  "description": "The frontend example for nginx-cors-boilerplate",
+  "keywords": [
+    "nginx",
+    "cors"
+  ],
+  "author": "melthaw@gmail.com",
+  "license": "Apache",
+  "homepage": "https://github.com/melthaw/nginx-cors-boilerplate",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "webpack": "webpack",
+    "webpack:w": "webpack -w",
+    "webpack-dev-server": "webpack-dev-server --inline --progress --port 8080",
+    "build-prod": "webpack --config config/webpack.prod.js",
+    "build-dev": "webpack --config config/webpack.dev.js",
+    "start": "npm run webpack-dev-server "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melthaw/nginx-cors-boilerplate.git"
+  },
+  "dependencies": {
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "angular-in-memory-web-api": "~0.2.2",
+    "core-js": "^2.4.1",
+    "ng2-validation": "3.9.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4",
+    "balloon-css": "^0.4.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-flatten": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-uglifycss": "^1.0.6",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.14.0"
+  }
+}
