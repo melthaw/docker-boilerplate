@@ -8,3 +8,11 @@ services:
 #      - "8190:8190"
     environment:
       JAVA_OPTS: -Xdebug -Xmx512m -Xms256m -Xrunjdwp:server=y,transport=dt_socket,address=8190,suspend=n
+  nginx-cors-boilerplate-frontend:
+    container_name: nginx-cors-boilerplate-frontend
+    build: frontend
+    ports:
+      - '8082:8080'
+    volumes:
+      - ./frontend:/code
+    command: "npm run start"

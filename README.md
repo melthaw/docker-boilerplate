@@ -47,16 +47,21 @@ First , please update your `/etc/hosts` with following configuration.
 
 ## startup
 
-1. build the backend & frontend.
+1. build the backend
 
 ```
 cd backend
 gradle clean build
-cd ../frontend
+```
+
+2. build the frontend
+
+```
+cd frontend
 npm install
 ```
 
-2. start the boilerplate with docker-compose
+3. start the boilerplate with docker-compose
 
 ```sh
 docker-compose up --build
@@ -67,5 +72,3 @@ docker-compose up --build
 Open browser and enter the URL
 
 > http://www.myexample.com
-
-The TODO list is shown on the home page.
