@@ -1,18 +1,30 @@
 version: '2'
 services:
-  nginx-cors-boilerplate-backend:
-    container_name: nginx-cors-boilerplate-backend
-    build: backend
+  nginx-core-proxy:
+    container_name: nginx-core-proxy
+    build: proxy
+    depends_on:
+      - nginx-cors-boilerplate-frontend
+      - nginx-cors-boilerplate-backend
     ports:
-      - '8081:8080'
-#      - "8190:8190"
+      - "80:80"
     environment:
-      JAVA_OPTS: -Xdebug -Xmx512m -Xms256m -Xrunjdwp:server=y,transport=dt_socket,address=8190,suspend=n
+      HOST_NAME: ${HOST_NAME}
+      FRONTEND_ENDPOINT: ${FRONTEND_ENDPOINT}
+      BACKEND_ENDPOINT: ${BACKEND_ENDPOINT}
   nginx-cors-boilerplate-frontend:
     container_name: nginx-cors-boilerplate-frontend
     build: frontend
     ports:
-      - '8082:8080'
+      - '8001:8080'
     volumes:
       - ./frontend:/code
     command: "npm run start"
+  nginx-cors-boilerplate-backend:
+    container_name: nginx-cors-boilerplate-backend
+    build: backend
+    ports:
+      - '8002:8080'
+#      - "8190:8190"
+    environment:
+      JAVA_OPTS: -Xdebug -Xmx512m -Xms256m -Xrunjdwp:server=y,transport=dt_socket,address=8190,suspend=n
