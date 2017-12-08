@@ -1,6 +1,6 @@
 import { OpaqueToken } from '@angular/core';
 
-const _apiEndpoint:string = 'http://127.0.0.1:8001';
+const _apiEndpoint:string = '';
 
 export interface AppConfig {
     apiEndpoint: string;
