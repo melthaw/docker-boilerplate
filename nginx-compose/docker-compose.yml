@@ -1,0 +1,31 @@
+version: '2'
+services:
+  proxy:
+    container_name: proxy
+    image: clouthinkin/nginx
+    depends_on:
+      - default
+      - foobar
+      - hello
+      - todolist
+    links:
+      - todolist
+    ports:
+      - "80:80"
+    volumes_from:
+      - default
+      - foobar
+      - hello
+      - todolist
+  default:
+    container_name: default
+    build: ./default
+  foobar:
+    container_name: foobar
+    build: ./foobar
+  hello:
+    container_name: hello
+    build: ./hello
+  todolist:
+    container_name: todolist
+    build: ./todolist
